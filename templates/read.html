@@ -7,10 +7,15 @@
 
 {% block body %}
 
+{% set i = namespace(value=0) %}
+
 <ul>
 	{% for item in item_list %}
+	{% set i.value = i.value + 1 %}
 	
 	<center>
+	<b>Page {{i.value}}</b> 
+	<br>
 	<li><img src="{{ url_for('static', filename=url_file_path + '/' + item) }}"></img></li>
 	</center>
 	<br><br>
