@@ -3,11 +3,11 @@ import os
 app = Flask(__name__)
 
 EXT = ['.jpg', '.jpeg', '.gif', '.png']
-BASE_DIR = os.path.join(os.getcwd(), 'static', 'manga')
+BASE_DIR = os.path.join(os.getcwd(), 'static')
 
 @app.route('/')
 def initial_browse():
-	item_list = os.listdir(BASE_DIR)
+	item_list = os.listdir(os.path.join(BASE_DIR, 'manga'))
 	return render_template('browse.html', url_file_path=None, item_list=item_list)
 
 @app.route('/<path:url_file_path>')
