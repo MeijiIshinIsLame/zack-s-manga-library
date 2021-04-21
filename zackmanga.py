@@ -7,7 +7,8 @@ BASE_DIR = os.path.join(os.getcwd(), 'static')
 
 @app.route('/')
 def initial_browse():
-	item_list = os.listdir(os.path.join(BASE_DIR, 'manga'))
+	item_list = os.listdir(BASE_DIR)
+	item_list.remove("css")
 	return render_template('browse.html', url_file_path=None, item_list=item_list)
 
 @app.route('/<path:url_file_path>')
