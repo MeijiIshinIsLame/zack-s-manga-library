@@ -3,7 +3,7 @@ import os
 app = Flask(__name__)
 
 EXT = ['.jpg', '.jpeg', '.gif', '.png']
-BASE_DIR = os.path.join(os.getcwd(), 'static/manga')
+BASE_DIR = os.path.join(os.getcwd(), 'static', 'manga')
 
 @app.route('/')
 def initial_browse():
