@@ -3,7 +3,7 @@ import os
 app = Flask(__name__)
 
 EXT = ['.jpg', '.jpeg', '.gif', '.png']
-BASE_DIR = '/root/Documents/manga_index/static/'
+BASE_DIR = os.path.join(os.getcwd(), 'static/manga')
 
 @app.route('/')
 def initial_browse():
@@ -17,6 +17,7 @@ def browse_nested(url_file_path):
 		item_list = os.listdir(nested_file_path)
 		
 		#if there is an image file, we know theres manga
+		item_list.sort()
 		for item in item_list:
 			for extension in EXT:
 				if extension in item:
@@ -26,4 +27,4 @@ def browse_nested(url_file_path):
 		return render_template('browse.html', url_file_path=url_file_path, item_list=item_list)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(host='0.0.0.0')
