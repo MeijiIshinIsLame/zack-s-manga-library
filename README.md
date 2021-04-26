@@ -1,5 +1,5 @@
 # zack-s-manga-library
-https://zackmanga.xyz/ <br>
+https://www.youtube.com/watch?v=D0NeFCyRLoE <br>
 Flask app to let me read my manga on the go.
 
 ## But, why though?
